@@ -1,27 +1,52 @@
-This is the Perl distribution Module-Install-Bugtracker.
+NAME
+    Module::Install::Bugtracker - automatically sets the bugtracker URL
 
-## Installation
+SYNOPSIS
+        # in Makefile.PL
+        use inc::Module::Install;
+        name 'Foo-Bar';
+        auto_set_bugtracker;
 
-Module-Install-Bugtracker installation is straightforward. If your CPAN shell
-is set up, you should just be able to do
+DESCRIPTION
+    This is a plugin for Module::Install to automatically set the bugtracker
+    URL via "bugtracker()" which will then be added to resources under
+    *META.yml*.
 
-    % cpan Module::Install::Bugtracker
+FUNCTIONS
+    "auto_set_bugtracker"
+        Sets the bugtracker URL via Module::Install's "bugtracker()"
+        function. The "name()" needs to be set before calling this function.
 
-Download it, unpack it, then build it as per the usual:
+BUGS AND LIMITATIONS
+    No bugs have been reported.
 
-    % perl Makefile.PL
-    % make && make test
+    Please report any bugs or feature requests through the web interface at
+    <http://rt.cpan.org>.
 
-Then install it:
+INSTALLATION
+    See perlmodinstall for information and options on installing Perl
+    modules.
 
-    % make install
+AVAILABILITY
+    The latest version of this module is available from the Comprehensive
+    Perl Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a
+    CPAN site near you. Or see
+    <http://search.cpan.org/dist/Module-Install-Bugtracker/>.
 
-## Documentation
+    The development version lives at
+    <http://github.com/hanekomu/module-install-bugtracker/>. Instead of
+    sending patches, please fork this project using the standard git and
+    github infrastructure.
 
-Module-Install-Bugtracker documentation is available as in POD. So you can do:
+AUTHORS
+    Marcel Grünauer, "<marcel@cpan.org>"
 
-    % perldoc Module::Install::Bugtracker
+COPYRIGHT AND LICENSE
+    Copyright 2009 by Marcel Grünauer
 
-to read the documentation online with your favorite pager.
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
 
-Marcel Gruenauer
+SEE ALSO
+    Module::Install
+

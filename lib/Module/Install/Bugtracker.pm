@@ -1,24 +1,23 @@
 package Module::Install::Bugtracker;
-
+use 5.006;
 use strict;
 use warnings;
-use 5.006;
-
-our $VERSION = '0.01';
-
+use URI::Escape;
+our $VERSION = '0.02';
 use base qw(Module::Install::Base);
 
 sub auto_set_bugtracker {
     my $self = shift;
     if ($self->name) {
-        $self->bugtracker(sprintf "http://search.cpan.org/dist/%s/", $self->name)
+        $self->bugtracker(
+            sprintf 'http://rt.cpan.org/Public/Dist/Display.html?Name=%s',
+            uri_escape($self->name),
+        );
     } else {
         warn "can't set bugtracker if 'name' is not set\n";
     }
 }
-
 1;
-
 __END__
 
 =for test_synopsis
@@ -40,7 +39,7 @@ Module::Install::Bugtracker - automatically sets the bugtracker URL
 =head1 DESCRIPTION
 
 This is a plugin for L<Module::Install> to automatically set the bugtracker URL
-via C<bugtracker()> which will then be added to resouces under I<META.yml>.
+via C<bugtracker()> which will then be added to resources under I<META.yml>.
 
 =head1 FUNCTIONS
 
@@ -68,7 +67,7 @@ See perlmodinstall for information and options on installing Perl modules.
 
 The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see L<http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+site near you. Or see L<http://search.cpan.org/dist/Module-Install-Bugtracker/>.
 
 The development version lives at
 L<http://github.com/hanekomu/module-install-bugtracker/>. Instead of sending

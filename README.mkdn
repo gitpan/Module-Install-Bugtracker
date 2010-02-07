@@ -1,27 +1,59 @@
-This is the Perl distribution Module-Install-Bugtracker.
+# NAME
 
-## Installation
+Module::Install::Bugtracker - automatically sets the bugtracker URL
 
-Module-Install-Bugtracker installation is straightforward. If your CPAN shell
-is set up, you should just be able to do
+# SYNOPSIS
 
-    % cpan Module::Install::Bugtracker
+    # in Makefile.PL
+    use inc::Module::Install;
+    name 'Foo-Bar';
+    auto_set_bugtracker;
 
-Download it, unpack it, then build it as per the usual:
+# DESCRIPTION
 
-    % perl Makefile.PL
-    % make && make test
+This is a plugin for [Module::Install](http://search.cpan.org/perldoc?Module::Install) to automatically set the bugtracker URL
+via `bugtracker()` which will then be added to resources under _META.yml_.
 
-Then install it:
+# FUNCTIONS
 
-    % make install
+- `auto_set_bugtracker`
 
-## Documentation
+Sets the bugtracker URL via [Module::Install](http://search.cpan.org/perldoc?Module::Install)'s `bugtracker()` function. The
+`name()` needs to be set before calling this function.
 
-Module-Install-Bugtracker documentation is available as in POD. So you can do:
+# BUGS AND LIMITATIONS
 
-    % perldoc Module::Install::Bugtracker
+No bugs have been reported.
 
-to read the documentation online with your favorite pager.
+Please report any bugs or feature requests through the web interface at
+<http://rt.cpan.org>.
 
-Marcel Gruenauer
+# INSTALLATION
+
+See perlmodinstall for information and options on installing Perl modules.
+
+# AVAILABILITY
+
+The latest version of this module is available from the Comprehensive Perl
+Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
+site near you. Or see <http://search.cpan.org/dist/Module-Install-Bugtracker/>.
+
+The development version lives at
+<http://github.com/hanekomu/module-install-bugtracker/>. Instead of sending
+patches, please fork this project using the standard git and github
+infrastructure.
+
+# AUTHORS
+
+Marcel Gr&uuml;nauer, `<marcel@cpan.org>`
+
+# COPYRIGHT AND LICENSE
+
+Copyright 2009 by Marcel Gr&uuml;nauer
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+# SEE ALSO
+
+[Module::Install](http://search.cpan.org/perldoc?Module::Install)
